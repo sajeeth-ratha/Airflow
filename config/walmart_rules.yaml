@@ -1,0 +1,27 @@
+walmart_raw:
+  required_columns:
+    - Date
+    - Store
+    - Weekly_Sales
+    - Holiday_Flag
+    - Temperature
+    - Fuel_Price
+    - CPI
+    - Unemployment
+
+  no_nulls:
+    - Date
+    - Store
+    - Weekly_Sales
+
+  unique_key:
+    - Date
+    - Store
+
+  ranges:
+    Fuel_Price: { min: 0 }
+    CPI: { min: 0 }
+    Unemployment: { min: 0, max: 100 }
+
+  warn_if_negative:
+    - Weekly_Sales
